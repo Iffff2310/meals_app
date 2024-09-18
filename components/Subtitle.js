@@ -12,15 +12,17 @@ export default Subtitle;
 
 const styles = StyleSheet.create({
   subtitleContainer: {
-    padding: 6,
-    marginHorizontal: 12,
-    marginVertical: 4,
+    paddingVertical: 8, // Increased padding for better spacing
+    marginHorizontal: 16, // Slightly increased horizontal margin
+    marginVertical: 8, // Larger vertical margin for separation
     borderBottomColor: '#e2b497',
     borderBottomWidth: 2,
+    width: '80%', // Reduced width to center-align the subtitle with space on the sides
+    alignSelf: 'center', // Center-align the subtitle
   },
   subtitle: {
     color: '#e2b497',
-    fontSize: 18,
+    fontSize: 20, // Slightly larger font for emphasis
     fontWeight: 'bold',
     textAlign: 'center',
   },
