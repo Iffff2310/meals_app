@@ -42,11 +42,11 @@ function MealItem({ id, title, imageUrl, duration, complexity, affordability }) 
             <Text style={styles.detailItem}>{duration}m</Text>
             <Text style={styles.detailItem}>{complexity.toUpperCase()}</Text>
             <Text style={styles.detailItem}>{affordability.toUpperCase()}</Text>
-            <Pressable onPress={toggleFavoriteHandler}>
+            <Pressable onPress={toggleFavoriteHandler} style={styles.favoriteButton}>
               {isFavorite ? (
-                <Ionicons name="heart" size={18} color="red" style={styles.favoriteIcon} />
+                <Ionicons name="heart" size={22} color="red" />
               ) : (
-                <Ionicons name="heart-outline" size={18} color="black" style={styles.favoriteIcon} />
+                <Ionicons name="heart-outline" size={22} color="black" />
               )}
             </Pressable>
           </View>
@@ -61,43 +61,46 @@ export default MealItem;
 const styles = StyleSheet.create({
   mealItem: {
     margin: 16,
-    borderRadius: 8,
+    borderRadius: 12, // Slightly increased border radius for smoother edges
     overflow: Platform.OS === 'android' ? 'hidden' : 'visible',
     backgroundColor: 'white',
-    elevation: 4,
+    elevation: 5, // Slightly higher elevation for a better shadow
     shadowColor: 'black',
-    shadowOpacity: 0.25,
-    shadowOffset: { width: 0, height: 2 },
-    shadowRadius: 8,
+    shadowOpacity: 0.3,
+    shadowOffset: { width: 0, height: 3 },
+    shadowRadius: 10, // Larger shadow radius for iOS
   },
   buttonPressed: {
-    opacity: 0.5,
+    opacity: 0.8, // Subtler pressed effect
   },
   innerContainer: {
-    borderRadius: 8,
+    borderRadius: 12,
     overflow: 'hidden',
   },
   image: {
     width: '100%',
-    height: 200,
+    height: 220, // Increased image height for better visibility
   },
   title: {
     fontWeight: 'bold',
     textAlign: 'center',
-    fontSize: 18,
-    margin: 8,
+    fontSize: 20, // Slightly larger font size for emphasis
+    marginVertical: 10, // Increased vertical margin
+    marginHorizontal: 8,
   },
   details: {
     flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'center',
-    padding: 8,
+    justifyContent: 'space-between', // More space between items
+    paddingHorizontal: 16, // Added padding for better layout
+    paddingVertical: 10,
   },
   detailItem: {
-    marginHorizontal: 4,
-    fontSize: 12,
+    marginHorizontal: 8, // More spacing between detail items
+    fontSize: 14, // Slightly larger font size for better readability
+    fontWeight: '500', // Added weight for detail items
   },
-  favoriteIcon: {
-    marginLeft: 8,
+  favoriteButton: {
+    padding: 6, // Added padding around the favorite icon for better touchability
   },
 });
